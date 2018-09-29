@@ -1,0 +1,44 @@
+{
+    "name": "finalproject",
+    "version": "1.0.0",
+    "description": "luuhs",
+    "main": "Server.js",
+    "scripts": {
+        "test": "mocha --exit",
+        "start": "nodemon Server.js",
+        "coverage": "nyc --reporter=html yarn test"
+    },
+    "repository": "luuhs",
+    "keywords": [
+        "finalproject"
+    ],
+    "author": "luuhs",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "bodyparser-json-error": "^1.0.0",
+        "chai": "^4.1.2",
+        "chai-http": "^3.0.0",
+        "cookie-parser": "^1.4.3",
+        "describe": "^1.2.0",
+        "eslint": "^4.18.2",
+        "express": "^4.16.2",
+        "express-session": "^1.15.6",
+        "log": "^1.4.0",
+        "mocha": "^5.0.4",
+        "multer": "^1.3.0",
+        "nock": "^9.2.3",
+        "nodemon": "^1.17.1",
+        "npm": "^5.7.1",
+        "nyc": "^11.6.0",
+        "q": "^1.5.1",
+        "run": "^1.4.0",
+        "sqlite3": "^3.1.13"
+    },
+    "devDependencies": {
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.9.0",
+        "jsdoc": "^3.5.5",
+        "nyc": "^11.6.0"
+    }
+}

@@ -1,0 +1,146 @@
+[
+    {
+        "fromcountry": "FR",
+        "id": "1",
+        "minweight": "0",
+        "price": "12.43",
+        "tocountry": "FR",
+        "weight": "250"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "2",
+        "minweight": "250",
+        "price": "12.43",
+        "tocountry": "FR",
+        "weight": "500"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "3",
+        "minweight": "500",
+        "price": "15.42",
+        "tocountry": "FR",
+        "weight": "750"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "4",
+        "minweight": "750",
+        "price": "15.42",
+        "tocountry": "FR",
+        "weight": "1000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "5",
+        "minweight": "1000",
+        "price": "20.77",
+        "tocountry": "FR",
+        "weight": "3000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "6",
+        "minweight": "3000",
+        "price": "26.07",
+        "tocountry": "FR",
+        "weight": "4000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "7",
+        "minweight": "4000",
+        "price": "31.43",
+        "tocountry": "FR",
+        "weight": "5000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "8",
+        "minweight": "5000",
+        "price": "36.77",
+        "tocountry": "FR",
+        "weight": "6000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "9",
+        "minweight": "6000",
+        "price": "42.13",
+        "tocountry": "FR",
+        "weight": "7000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "10",
+        "minweight": "7000",
+        "price": "47.49",
+        "tocountry": "FR",
+        "weight": "8000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "11",
+        "minweight": "8000",
+        "price": "52.83",
+        "tocountry": "FR",
+        "weight": "9000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "12",
+        "minweight": "9000",
+        "price": "58.83",
+        "tocountry": "FR",
+        "weight": "10000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "13",
+        "minweight": "10000",
+        "price": "63.54",
+        "tocountry": "FR",
+        "weight": "11000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "14",
+        "minweight": "11000",
+        "price": "88.19",
+        "tocountry": "FR",
+        "weight": "12000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "15",
+        "minweight": "12000",
+        "price": "88.19",
+        "tocountry": "FR",
+        "weight": "13000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "16",
+        "minweight": "13000",
+        "price": "88.19",
+        "tocountry": "FR",
+        "weight": "14000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "17",
+        "minweight": "14000",
+        "price": "88.19",
+        "tocountry": "FR",
+        "weight": "15000"
+    },
+    {
+        "fromcountry": "FR",
+        "id": "18",
+        "minweight": "15000",
+        "price": "100",
+        "tocountry": "FR",
+        "weight": ""
+    }
+]

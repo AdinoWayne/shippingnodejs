@@ -1,0 +1,100 @@
+[Tue Mar 27 2018 09:45:59 GMT+0700 (SE Asia Standard Time)] INFO ===================Server start===================
+[Tue Mar 27 2018 09:45:59 GMT+0700 (SE Asia Standard Time)] INFO Connected to the in-memory SQlite database.
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] INFO =====>>>>> call api GetQuote
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG {"data":{"origin":{"contact":{"name":"La Redoute Contact","email":"laredoute@example.com","phone":"07 1234 5678"},"address":{"country_code":"FR","locality":"Anzin","postal_code":"59410","address_line1":"Rue Jean Jaures"}},"destination":{"contact":{"name":"Marquise de Pompadour","email":"marquise-de-pompadour@example.com","phone":"07 9876 5432"},"address":{"country_code":"FR","locality":"Marseille","postal_code":"13006","address_line1":"175 Rue de Rome"}},"package":{"dimensions":{"height":10,"width":10,"length":10,"unit":"cm"},"grossWeight":{"amount":100,"unit":"kg"}}}}
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function getRate
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= SELECT id,price FROM rate WHERE ((100000>minweight AND 100000<=weight) OR (100000>minweight AND weight IS NULL)) AND ('FR'=fromcountry AND 'FR'=tocountry);
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function insertQuote
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= INSERT INTO quote VALUES('1522118762205',100)
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] DEBUG {"data":[{"id":"1522118762205","amount":100}]}
+[Tue Mar 27 2018 09:46:02 GMT+0700 (SE Asia Standard Time)] INFO send Rate success!
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] INFO =====>>>>> call api Create shipment
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG {"data":{"quote":{"id":"1522118762205"},"origin":{"contact":{"name":"La Redoute Contact","email":"laredoute@example.com","phone":"07 1234 5678"},"address":{"country_code":"FR","locality":"Anzin","postal_code":"59410","address_line1":"Rue Jean Jaures","organisation":true}},"destination":{"contact":{"name":"Marquise de Pompadour","email":"marquise-de-pompadour@example.com","phone":"07 9876 5432"},"address":{"country_code":"FR","locality":"Marseille","postal_code":"13006","address_line1":"175 Rue de Rome","organisation":false}},"package":{"dimensions":{"height":10,"width":10,"length":10,"unit":"cm"},"grossWeight":{"amount":10,"unit":"kg"}}}}
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function checkIdQuote
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= SELECT amount FROM quote WHERE id=1522118762205 ;
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG insertShipment
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= INSERT INTO shipment VALUES(
+    '1522118777',
+    'La Redoute Contact',
+    'laredoute@example.com',
+    '07 1234 5678',
+    'FR',
+    'Anzin',
+    '59410',
+    'Rue Jean Jaures',
+     1,
+    'Marquise de Pompadour',
+    'marquise-de-pompadour@example.com',
+    '07 9876 5432',
+    'FR',
+    'Marseille',
+    '13006',
+    '175 Rue de Rome',
+     0,
+     10,
+     10,
+     10,
+    'cm',
+     100,
+    'kg',
+    '2018-03-27T02:46:17.332Z'
+  );
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] DEBUG { data: 
+   [ { ref: '1522118777',
+       created_at: '2018-03-27T02:46:17.332Z',
+       cost: 100 } ] }
+[Tue Mar 27 2018 09:46:17 GMT+0700 (SE Asia Standard Time)] INFO send create success!
+[Tue Mar 27 2018 09:46:24 GMT+0700 (SE Asia Standard Time)] INFO =====>>>>> call api Get Shipment
+[Tue Mar 27 2018 09:46:24 GMT+0700 (SE Asia Standard Time)] DEBUG { ref: '1522118777',
+  'cache-control': 'no-cache',
+  'postman-token': '91cdae66-af8c-410d-b0af-4a7ffbf3783b',
+  'user-agent': 'PostmanRuntime/7.1.1',
+  accept: '*/*',
+  host: 'localhost:8000',
+  cookie: 'connect.sid=s%3AtkVyWUA4_4Gyidx5j9CHQlR3aU3i4Eu6.eD6hzHsX%2Bhedy%2Frfx2ZqaACnaKiDCkZ1UGLOG%2B3kEGw',
+  'accept-encoding': 'gzip, deflate',
+  connection: 'keep-alive' }
+[Tue Mar 27 2018 09:46:24 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function getShipment
+[Tue Mar 27 2018 09:46:24 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= SELECT * FROM shipment WHERE ref=1522118777 ;
+[Tue Mar 27 2018 09:46:24 GMT+0700 (SE Asia Standard Time)] INFO getShipment success!
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] INFO =====>>>>> call api Delete Shipment
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] DEBUG { ref: '1522118777',
+  'cache-control': 'no-cache',
+  'postman-token': '17944d3f-68ad-4b4e-a865-3e9adc06ff12',
+  'user-agent': 'PostmanRuntime/7.1.1',
+  accept: '*/*',
+  host: 'localhost:8000',
+  cookie: 'connect.sid=s%3AtkVyWUA4_4Gyidx5j9CHQlR3aU3i4Eu6.eD6hzHsX%2Bhedy%2Frfx2ZqaACnaKiDCkZ1UGLOG%2B3kEGw',
+  'accept-encoding': 'gzip, deflate',
+  'content-length': '0',
+  connection: 'keep-alive' }
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function checkRef
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= SELECT ref FROM shipment WHERE ref='1522118777' ;
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function deletedb
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= DELETE FROM shipment WHERE ref='1522118777'
+[Tue Mar 27 2018 09:46:33 GMT+0700 (SE Asia Standard Time)] INFO delete success!
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] INFO =====>>>>> call api Delete Shipment
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] DEBUG { ref: '1522118777',
+  'cache-control': 'no-cache',
+  'postman-token': '793a1684-7975-4b6b-86c1-ea3e5d7d9823',
+  'user-agent': 'PostmanRuntime/7.1.1',
+  accept: '*/*',
+  host: 'localhost:8000',
+  cookie: 'connect.sid=s%3AtkVyWUA4_4Gyidx5j9CHQlR3aU3i4Eu6.eD6hzHsX%2Bhedy%2Frfx2ZqaACnaKiDCkZ1UGLOG%2B3kEGw',
+  'accept-encoding': 'gzip, deflate',
+  'content-length': '0',
+  connection: 'keep-alive' }
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function checkRef
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= SELECT ref FROM shipment WHERE ref='1522118777' ;
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] DEBUG ----------- run function deletedb
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] DEBUG SQL= DELETE FROM shipment WHERE ref='1522118777'
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] ERROR null
+[Tue Mar 27 2018 09:46:36 GMT+0700 (SE Asia Standard Time)] INFO can not delete
+[Tue Mar 27 2018 09:46:44 GMT+0700 (SE Asia Standard Time)] INFO ===================Server start===================
+[Tue Mar 27 2018 09:46:44 GMT+0700 (SE Asia Standard Time)] INFO Connected to the in-memory SQlite database.
+[Tue Mar 27 2018 09:49:26 GMT+0700 (SE Asia Standard Time)] INFO ===================Server start===================
+[Tue Mar 27 2018 09:49:26 GMT+0700 (SE Asia Standard Time)] INFO Connected to the in-memory SQlite database.
+[Tue Mar 27 2018 09:49:27 GMT+0700 (SE Asia Standard Time)] INFO ===================Server start===================
+[Tue Mar 27 2018 09:49:27 GMT+0700 (SE Asia Standard Time)] INFO Connected to the in-memory SQlite database.
+[Tue Mar 27 2018 09:49:32 GMT+0700 (SE Asia Standard Time)] INFO ===================Server start===================
+[Tue Mar 27 2018 09:49:32 GMT+0700 (SE Asia Standard Time)] INFO Connected to the in-memory SQlite database.
